@@ -1,0 +1,159 @@
+/******************************************************************************/
+/* General Styles                                                             */
+/******************************************************************************/
+
+ul.timeline {
+    list-style-type: none;
+    border-left: 1em solid gray;
+    padding: 1em;
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+ul.timeline li.work {
+    display:inline;
+    margin-left: 1em;
+}
+
+ul.timeline li.work div.relative,
+ul.timeline li.work div.content {
+    margin-left: 2em;
+    padding-left: 1em;
+    border: 0.2em solid darkgray;
+    z-index: 99;
+}
+
+ul.timeline li.work div.content {
+    border-top: 0;
+    border-bottom-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+}
+
+ul.timeline li.work div.relative {
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+    border-bottom-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+}
+
+ul.timeline li.work input.radio {
+    visibility: hidden;
+}
+
+ul.timeline li.work input.radio ~ div.content {
+    display: none;
+    visibility: hidden;
+}
+
+ul.timeline li.work input.radio:checked ~ div.content {
+    display: block;
+    visibility: visible;
+}
+
+ul.timeline li.work input.radio:checked ~ div.relative {
+    border-bottom: 0;
+    border-bottom-left-radius: 0em;
+    border-bottom-right-radius: 0em;
+}
+
+
+/******************************************************************************/
+/* Styles for Timeline 1                                                      */
+/******************************************************************************/
+
+ul.timeline1 span.circle {
+    position: absolute;
+    left: 0.8em;
+    height: 1.4em;
+    width: 1.4em;
+    border-radius: 50%;
+    display: inline-block;
+    margin-top: 0.2em;
+}
+
+ul.timeline1 li.work div.relative,
+ul.timeline1 li.work div.content {
+    margin-left: 0;
+}
+
+ul.timeline1 div.relative label {
+    padding-top: 0.5em;
+}
+
+ul.timeline1 div.relative span.date {
+    padding: 1em;
+    font-size: 0.8em;
+}
+
+/******************************************************************************/
+/* Styles for Timeline 2                                                      */
+/******************************************************************************/
+
+ul.timeline2 span.circle {
+    position: absolute;
+    left: 0.8em;
+    height: 1.4em;
+    width: 1.4em;
+    display: inline-block;
+    margin-top: 0.2em;
+}
+
+ul.timeline2 div.relative label {
+    padding-top: 0.5em;
+}
+
+ul.timeline2 div.relative span.date {
+    padding: 1em;
+    font-size: 0.8em;
+}
+
+ul.timeline2 li.work div.content {
+    border-top: 0;
+    border-bottom-left-radius: 0.0em;
+    border-bottom-right-radius: 0.0em;
+}
+
+ul.timeline2 li.work div.relative {
+    border-top-left-radius: 0.0em;
+    border-top-right-radius: 0.0em;
+    border-bottom-left-radius: 0.0em;
+    border-bottom-right-radius: 0.0em;
+}
+
+
+
+/******************************************************************************/
+/* Styles for Timeline 3                                                      */
+/******************************************************************************/
+
+ul.timeline3 span.circle {
+    position: absolute;
+    left: 0.8em;
+    height: 1.4em;
+    width: 1.4em;
+    border-radius: 0.4em;
+    display: inline-block;
+    margin-top: 0.2em;
+}
+
+ul.timeline3 div.relative label {
+    padding-top: 0.5em;
+}
+
+ul.timeline3 div.relative span.date {
+    padding: 1em;
+    font-size: 0.8em;
+}
+
+ul.timeline3 li.work div.content {
+    border-top: 0;
+    border-bottom-left-radius: 0.2em;
+    border-bottom-right-radius: 0.2em;
+}
+
+ul.timeline3 li.work div.relative {
+    border-top-left-radius: 0.2em;
+    border-top-right-radius: 0.2em;
+    border-bottom-left-radius: 0.2em;
+    border-bottom-right-radius: 0.2em;
+}

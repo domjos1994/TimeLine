@@ -1,0 +1,32 @@
+<ul xmlns="http://www.w3.org/1999/xhtml" lang="en" xmlns:f="http://typo3.org/ns/fluid/ViewHelpers" class='timeline timeline{layout} col{color}'>
+    <f:for each="{events}" as="event" iteration="objIterator">
+        <li class='work'>
+            <f:if condition="{objIterator.cycle}==1">
+                <f:then>
+                    <input class='radio' id='work{uid}{objIterator.index}' name='works' type='radio' checked="checked">
+                </f:then>
+                <f:else>
+                    <input class='radio' id='work{uid}{objIterator.index}' name='works' type='radio'>
+                </f:else>
+            </f:if>
+
+            <div class="relative">
+                <label for='work{uid}{objIterator.index}'>{event.title}</label>
+                <f:if condition="{event.endDate}==0">
+                    <f:then>
+                        <span class='date'><f:format.date format="d.m.Y">{event.startDate}</f:format.date></span>
+                    </f:then>
+                    <f:else>
+                        <span class='date'><f:format.date format="d.m.Y">{event.startDate}</f:format.date> - <f:format.date format="d.m.Y">{event.endDate}</f:format.date></span>
+                    </f:else>
+                </f:if>
+                <span class='circle'></span>
+            </div>
+            <div class='content'>
+                <p>
+                    {event.description}
+                </p>
+            </div>
+        </li>
+    </f:for>
+</ul>
