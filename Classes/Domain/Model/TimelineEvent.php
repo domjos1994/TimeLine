@@ -14,6 +14,13 @@ class TimelineEvent extends AbstractEntity {
     protected $title = '';
     
     /**
+     * The link for the title
+     *
+     * @var string
+     * */
+    protected $eventLink = '';
+    
+    /**
      * The description of the Event
      *
      * @var string
@@ -36,6 +43,7 @@ class TimelineEvent extends AbstractEntity {
 
     public function __construct($title = '', $description = '', $startDate = null, $endDate = null) {
         $this->title = $title;
+        $this->eventLink = "";
         $this->description = $description;
         $this->startDate = $startDate;
         $this->endDate = $endDate;
@@ -47,6 +55,14 @@ class TimelineEvent extends AbstractEntity {
 
     public function getTitle() {
         return $this->title;
+    }
+    
+    public function setEventLink($eventLink) {
+        $this->eventLink = $eventLink;
+    }
+
+    public function getEventLink() {
+        return $this->eventLink;
     }
 
     public function setDescription($description) {

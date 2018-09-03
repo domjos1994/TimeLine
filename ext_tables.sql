@@ -3,6 +3,7 @@ CREATE TABLE tx_timeline_domain_model_timelineevent (
     pid int(11) DEFAULT '0' NOT NULL,
 
     title varchar(255) DEFAULT '' NOT NULL,
+    event_link text,
     description text NOT NULL,
     start_date int(11) DEFAULT '0' NOT NULL,
     end_date int(11) DEFAULT '0',

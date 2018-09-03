@@ -25,6 +25,12 @@
             <div class='content'>
                 <p>
                     {event.description}
+                    <f:if condition="{event.eventLink}">
+                        <f:then>
+                            <br/>
+                            <f:link.typolink parameter="{event.eventLink}">More Details</f:link.typolink>
+                        </f:then>
+                    </f:if>
                 </p>
             </div>
         </li>
