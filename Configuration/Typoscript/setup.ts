@@ -23,4 +23,21 @@ page.includeCSS.file = EXT:timeline/Resources/Public/Css/timeline.css
 [globalVar = LIT:1 = {$plugin.tx_timeline_pi1.settings.jquery}]
 page.includeJSFooter.file = EXT:timeline/Resources/Public/Js/jquery.js
 [global]
-page.includeJSFooter.file = EXT:timeline/Resources/Public/Js/timeline.js
+#page.includeJSFooter.file = EXT:timeline/Resources/Public/Js/timeline.js
+page.footerData.10 = TEXT
+page.footerData.10.value (
+    <script type="text/javascript">
+        $('ul.timeline').each(function () {
+            var classes = $(this).attr('class').split(" ");
+            classes.forEach(function ($var) {
+                if ($var.startsWith("col")) {
+                    $var = $var.replace("col", "");
+                    $('ul.timeline1 li.work div.relative').css("background-color", $var);
+                    $('ul.timeline1 li.work div.content').css("background-color", $var);
+                    $('ul.timeline1 li.work div.relative span.circle').css("background-color", $var);
+                    $('ul.timeline2 li div.timeline-panel h4').css("color", $var);
+                }
+            });
+        });
+    </script>
+)

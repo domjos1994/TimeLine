@@ -1,52 +1,154 @@
-<ul xmlns="http://www.w3.org/1999/xhtml" lang="en" xmlns:f="http://typo3.org/ns/fluid/ViewHelpers" class='timeline timeline{layout} col{color}'>
-    <f:for each="{events}" as="event" iteration="objIterator">
-        <li class='work'>
-            <f:if condition="{objIterator.cycle}==1">
-                <f:then>
-                    <input class='radio' id='work{uid}{objIterator.index}' name='works' type='radio' checked="checked">
-                </f:then>
-                <f:else>
-                    <input class='radio' id='work{uid}{objIterator.index}' name='works' type='radio'>
-                </f:else>
-            </f:if>
+<div class="tx_timeline">
+    <ul class='timeline timeline{layout} col{color}'>
+        <f:for each="{events}" as="event" iteration="objIterator">
+            <f:switch expression="{layout}">
+                <f:case value="1">
+                    <li class='work'>
+                        <f:if condition="{objIterator.cycle}==1">
+                            <f:then>
+                                <input class='radio' id='work{uid}{objIterator.index}' name='works' type='radio' checked="checked">
+                            </f:then>
+                            <f:else>
+                                <input class='radio' id='work{uid}{objIterator.index}' name='works' type='radio'>
+                            </f:else>
+                        </f:if>
 
-            <div class="relative">
-                <label for='work{uid}{objIterator.index}'>{event.title}</label>
-                <f:if condition="{event.endDate}==0">
-                    <f:then>
-                        <f:if condition="{onlyYear}">
+                        <div class="relative">
+                            <label for='work{uid}{objIterator.index}'>{event.title}</label>
+                            <f:if condition="{event.endDate}==0">
+                                <f:then>
+                                    <f:if condition="{onlyYear}">
+                                        <f:then>
+                                            <span class='date'><f:format.date format="Y">{event.startDate}</f:format.date></span>
+                                        </f:then>
+                                        <f:else>
+                                            <span class='date'><f:format.date format="{event.format}">{event.startDate}</f:format.date></span>
+                                        </f:else>
+                                    </f:if>
+                                </f:then>
+                                <f:else>
+                                    <f:if condition="{onlyYear}">
+                                        <f:then>
+                                            <span class='date'><f:format.date format="Y">{event.startDate}</f:format.date> - <f:format.date format="Y">{event.endDate}</f:format.date></span>
+                                        </f:then>
+                                        <f:else>
+                                            <span class='date'><f:format.date format="{event.format}">{event.startDate}</f:format.date> - <f:format.date format="{event.format}">{event.endDate}</f:format.date></span>
+                                        </f:else>
+                                    </f:if>
+                                </f:else>
+                            </f:if>
+                            <span class='circle'></span>
+                        </div>
+                        <div class='content'>
+                            <p>
+                                {event.description}
+                            <f:if condition="{event.eventLink}">
+                                <f:then>
+                                    <br/>
+                                    <f:link.typolink parameter="{event.eventLink}">More Details</f:link.typolink>
+                                </f:then>
+                            </f:if>
+                            </p>
+                        </div>
+                    </li>
+                </f:case>
+                <f:case value="2">
+                    <li>
+                        <div class="timeline-badge">
+                            <a><i class="fa fa-circle" id=""></i></a>
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>{event.title}</h4>
+                            </div>
+                            <div class="timeline-body">
+                                <p>{event.description}</p>
+                                <f:if condition="{event.eventLink}">
+                                    <f:then>
+                                        <br/>
+                                        <f:link.typolink parameter="{event.eventLink}">More Details</f:link.typolink>
+                                    </f:then>
+                                </f:if>
+                            </div>
+                            <div class="timeline-footer">
+                                <f:if condition="{event.endDate}==0">
+                                    <f:then>
+                                        <f:if condition="{onlyYear}">
+                                            <f:then>
+                                                <p class="text-right"><f:format.date format="Y">{event.startDate}</f:format.date></p>
+                                            </f:then>
+                                            <f:else>
+                                                <p class="text-right"><f:format.date format="{event.format}">{event.startDate}</f:format.date></p>
+                                            </f:else>
+                                        </f:if>
+                                    </f:then>
+                                    <f:else>
+                                        <f:if condition="{onlyYear}">
+                                            <f:then>
+                                                <p class="text-right"><f:format.date format="Y">{event.startDate}</f:format.date> - <f:format.date format="Y">{event.endDate}</f:format.date></p>
+                                            </f:then>
+                                            <f:else>
+                                                <p class="text-right"><f:format.date format="{event.format}">{event.startDate}</f:format.date> - <f:format.date format="{event.format}">{event.endDate}</f:format.date></p>
+                                            </f:else>
+                                        </f:if>
+                                    </f:else>
+                                </f:if>
+                            </div>
+                        </div>
+                    </li>
+                </f:case>
+                <f:case value="2">
+                    <li class='work'>
+                        <f:if condition="{objIterator.cycle}==1">
                             <f:then>
-                                <span class='date'><f:format.date format="Y">{event.startDate}</f:format.date></span>
+                                <input class='radio' id='work{uid}{objIterator.index}' name='works' type='radio' checked="checked">
                             </f:then>
                             <f:else>
-                                <span class='date'><f:format.date format="{event.format}">{event.startDate}</f:format.date></span>
+                                <input class='radio' id='work{uid}{objIterator.index}' name='works' type='radio'>
                             </f:else>
                         </f:if>
-                    </f:then>
-                    <f:else>
-                        <f:if condition="{onlyYear}">
-                            <f:then>
-                                <span class='date'><f:format.date format="Y">{event.startDate}</f:format.date> - <f:format.date format="Y">{event.endDate}</f:format.date></span>
-                            </f:then>
-                            <f:else>
-                                <span class='date'><f:format.date format="{event.format}">{event.startDate}</f:format.date> - <f:format.date format="{event.format}">{event.endDate}</f:format.date></span>
-                            </f:else>
-                        </f:if>
-                    </f:else>
-                </f:if>
-                <span class='circle'></span>
-            </div>
-            <div class='content'>
-                <p>
-                    {event.description}
-                    <f:if condition="{event.eventLink}">
-                        <f:then>
-                            <br/>
-                            <f:link.typolink parameter="{event.eventLink}">More Details</f:link.typolink>
-                        </f:then>
-                    </f:if>
-                </p>
-            </div>
-        </li>
-    </f:for>
-</ul>
+
+                        <div class="relative">
+                            <label for='work{uid}{objIterator.index}'>{event.title}</label>
+                            <f:if condition="{event.endDate}==0">
+                                <f:then>
+                                    <f:if condition="{onlyYear}">
+                                        <f:then>
+                                            <span class='date'><f:format.date format="Y">{event.startDate}</f:format.date></span>
+                                        </f:then>
+                                        <f:else>
+                                            <span class='date'><f:format.date format="{event.format}">{event.startDate}</f:format.date></span>
+                                        </f:else>
+                                    </f:if>
+                                </f:then>
+                                <f:else>
+                                    <f:if condition="{onlyYear}">
+                                        <f:then>
+                                            <span class='date'><f:format.date format="Y">{event.startDate}</f:format.date> - <f:format.date format="Y">{event.endDate}</f:format.date></span>
+                                        </f:then>
+                                        <f:else>
+                                            <span class='date'><f:format.date format="{event.format}">{event.startDate}</f:format.date> - <f:format.date format="{event.format}">{event.endDate}</f:format.date></span>
+                                        </f:else>
+                                    </f:if>
+                                </f:else>
+                            </f:if>
+                            <span class='circle'></span>
+                        </div>
+                        <div class='content'>
+                            <p>
+                                {event.description}
+                            <f:if condition="{event.eventLink}">
+                                <f:then>
+                                    <br/>
+                                    <f:link.typolink parameter="{event.eventLink}">More Details</f:link.typolink>
+                                </f:then>
+                            </f:if>
+                            </p>
+                        </div>
+                    </li>
+                </f:case>
+            </f:switch>
+        </f:for>
+    </ul>
+</div>
+    
