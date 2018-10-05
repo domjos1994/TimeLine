@@ -17,7 +17,7 @@
             <source>Title</source>
          </trans-unit>
          <trans-unit id="tx_timeline_domain_model_timelineevent.item_event_title">
-            <source>Link zu den Details</source>
+            <source>Link to the Details</source>
          </trans-unit>
          <trans-unit id="tx_timeline_domain_model_timelineevent.item_description">
             <source>Description</source>
