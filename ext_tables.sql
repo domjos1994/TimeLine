@@ -8,6 +8,7 @@ CREATE TABLE tx_timeline_domain_model_timelineevent (
     start_date int(11) DEFAULT '0' NOT NULL,
     end_date int(11) DEFAULT '0',
     timetable_id int(11) unsigned DEFAULT '0',
+    format text NOT NULL,
 
     tstamp int(11) unsigned DEFAULT '0' NOT NULL,
     crdate int(11) unsigned DEFAULT '0' NOT NULL,

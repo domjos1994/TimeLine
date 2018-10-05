@@ -40,13 +40,21 @@ class TimelineEvent extends AbstractEntity {
      * @var int
      * */
     protected $endDate = 0;
+    
+    /**
+     * The format of the Event-Dates
+     *
+     * @var string
+     * */
+    protected $format = '';
 
-    public function __construct($title = '', $description = '', $startDate = null, $endDate = null) {
+    public function __construct($title = '', $description = '', $startDate = null, $endDate = null, $format = '') {
         $this->title = $title;
         $this->eventLink = "";
         $this->description = $description;
         $this->startDate = $startDate;
         $this->endDate = $endDate;
+        $this->format = $format;
     }
     
     public function setTitle($title) {
@@ -87,6 +95,14 @@ class TimelineEvent extends AbstractEntity {
 
     public function getEndDate() {
         return $this->endDate;
+    }
+
+    public function setFormat($format) {
+        $this->format = $format;
+    }
+
+    public function getFormat() {
+        return $this->format;
     }
 
 }

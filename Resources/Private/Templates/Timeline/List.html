@@ -14,10 +14,24 @@
                 <label for='work{uid}{objIterator.index}'>{event.title}</label>
                 <f:if condition="{event.endDate}==0">
                     <f:then>
-                        <span class='date'><f:format.date format="d.m.Y">{event.startDate}</f:format.date></span>
+                        <f:if condition="{onlyYear}">
+                            <f:then>
+                                <span class='date'><f:format.date format="Y">{event.startDate}</f:format.date></span>
+                            </f:then>
+                            <f:else>
+                                <span class='date'><f:format.date format="{event.format}">{event.startDate}</f:format.date></span>
+                            </f:else>
+                        </f:if>
                     </f:then>
                     <f:else>
-                        <span class='date'><f:format.date format="d.m.Y">{event.startDate}</f:format.date> - <f:format.date format="d.m.Y">{event.endDate}</f:format.date></span>
+                        <f:if condition="{onlyYear}">
+                            <f:then>
+                                <span class='date'><f:format.date format="Y">{event.startDate}</f:format.date> - <f:format.date format="Y">{event.endDate}</f:format.date></span>
+                            </f:then>
+                            <f:else>
+                                <span class='date'><f:format.date format="{event.format}">{event.startDate}</f:format.date> - <f:format.date format="{event.format}">{event.endDate}</f:format.date></span>
+                            </f:else>
+                        </f:if>
                     </f:else>
                 </f:if>
                 <span class='circle'></span>

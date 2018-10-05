@@ -8,6 +8,7 @@ plugin.tx_timeline_pi1 {
     settings {
         jquery = {$plugin.tx_timeline_pi1.settings.jquery}
         layout = {$plugin.tx_timeline_pi1.settings.layout}
+        year = {$plugin.tx_timeline_pi1.settings.year}
         color = {$plugin.tx_timeline_pi1.settings.color}
         customCSS = {$plugin.tx_timeline_pi1.settings.customCSS}
     }

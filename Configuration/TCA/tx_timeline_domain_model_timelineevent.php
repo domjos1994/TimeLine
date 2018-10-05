@@ -8,7 +8,6 @@ return [
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
-        'sortby' => 'uid',
         'searchFields' => 'title',
         'origUid' => 't3_origuid',
         'languageField' => 'sys_language_uid',
@@ -75,9 +74,18 @@ return [
                 'eval' => 'date'
             ]
         ],
+        'format' => [
+            'label' => 'LLL:EXT:timeline/Resources/Private/Language/locallang_db.xlf:tx_timeline_domain_model_timelineevent.item_format',
+            'config' => [
+                'type' => 'input',
+                'eval' => 'trim',
+                'size' => '15',
+                'default' => 'd.m.Y'
+            ]
+        ],
     ],
     'types' => [
-        '0' => ['showitem' => 'title, event_link, description, start_date, end_date']
+        '0' => ['showitem' => 'title, event_link, description, start_date, end_date, format']
     ]
 ];
 

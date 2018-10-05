@@ -10,6 +10,7 @@ class TimelineController extends ActionController {
     private $timelineEventRepository;
     protected $configurationManager;
     private $layout;
+    private $year;
     private $color;
 
     public function injectTimelineEventRepository(TimelineEventRepository $timelineEventRepository) {
@@ -26,6 +27,13 @@ class TimelineController extends ActionController {
             $this->layout = str_replace("Layout ", "", $tsSettings['layout']);
         } else {
             $this->layout = $tmpLayout;
+        }
+        
+        $tmpYear = $this->settings['year'];
+        if(empty($tmpYear)) {
+            $this->year = $tsSettings['year'];
+        } else {
+            $this->year = $tmpYear;
         }
         
         $tmpColor = $this->settings['color'];
@@ -59,6 +67,7 @@ class TimelineController extends ActionController {
         $this->view->assign('events', $timelineEvents);
         $this->view->assign('uid', $uid);
         $this->view->assign("layout", $this->layout);
+        $this->view->assign("onlyYear", $this->year);
         $this->view->assign("color", $this->color);
         return $this->view->render();
     }

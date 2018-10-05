@@ -36,6 +36,14 @@
                             </config>
                         </TCEforms>
                     </settings.layout>
+                    <settings.year>
+                        <TCEforms>
+                            <label>LLL:EXT:timeline/Resources/Private/Language/locallang_db.xlf:tx_timeline_domain_model_timeline.item_year</label>
+                            <config>
+                                <type>check</type>
+                            </config>
+                        </TCEforms>
+                    </settings.year>
                     <settings.color>
                         <TCEforms>
                             <label>LLL:EXT:timeline/Resources/Private/Language/locallang_db.xlf:tx_timeline_domain_model_timeline.item_color</label>
