@@ -31,6 +31,15 @@
          <trans-unit id="tx_timeline_domain_model_timelineevent.item_format">
              <source>Date-Format</source>
          </trans-unit>
+         <trans-unit id="tx_timeline_domain_model_timelineevent.item_side">
+             <source>Direction</source>
+         </trans-unit>
+         <trans-unit id="tx_timeline_domain_model_timelineevent.item_side.left">
+             <source>Left</source>
+         </trans-unit>
+         <trans-unit id="tx_timeline_domain_model_timelineevent.item_side.right">
+             <source>Right</source>
+         </trans-unit>
          
          <trans-unit id="tx_timeline_domain_model_timeline">
              <source>TimeLine</source>

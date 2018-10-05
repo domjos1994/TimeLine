@@ -270,8 +270,66 @@ ul.timeline2 {
     }
 }
 
-
-
 /******************************************************************************/
 /* Styles for Timeline 3                                                      */
 /******************************************************************************/
+
+.timeline3 {
+    border-left: 4px solid #4298C3;
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    color: black;
+    margin: 50px auto;
+    letter-spacing: 0.5px;
+    position: relative;
+    line-height: 1.4em;
+    font-size: 1.03em;
+    padding: 50px;
+    list-style: none;
+    text-align: left;
+    font-weight: 100;
+}
+.timeline3 h1,
+.timeline3 h2,
+.timeline3 h3 {
+    letter-spacing: 1.5px;
+    font-weight: 100;
+    font-size: 1.4em;
+}
+.timeline3 .event {
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+    padding-bottom: 25px;
+    margin-bottom: 50px;
+    position: relative;
+}
+.timeline3 .event:last-of-type {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border: none;
+}
+.timeline3 .event:before,
+.timeline3 .event:after {
+    position: absolute;
+    display: block;
+    top: 0;
+}
+.timeline3 .event:before {
+    left: -217.5px;
+    color: black;
+    content: attr(data-date);
+    text-align: right;
+    font-weight: 100;
+    font-size: 0.9em;
+    min-width: 120px;
+}
+.timeline3 .event:after {
+    box-shadow: 0 0 0 4px gray;
+    left: -57.85px;
+    background: #313534;
+    border-radius: 50%;
+    height: 11px;
+    width: 11px;
+    content: "";
+    top: 5px;
+}

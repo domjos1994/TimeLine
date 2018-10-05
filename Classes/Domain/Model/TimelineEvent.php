@@ -47,14 +47,22 @@ class TimelineEvent extends AbstractEntity {
      * @var string
      * */
     protected $format = '';
+    
+    /**
+     * The Direction of the event
+     *
+     * @var int
+     * */
+    protected $side = 0;
 
-    public function __construct($title = '', $description = '', $startDate = null, $endDate = null, $format = '') {
+    public function __construct($title = '', $description = '', $startDate = null, $endDate = null, $format = '', $side = null) {
         $this->title = $title;
         $this->eventLink = "";
         $this->description = $description;
         $this->startDate = $startDate;
         $this->endDate = $endDate;
         $this->format = $format;
+        $this->side = $side;
     }
     
     public function setTitle($title) {
@@ -103,6 +111,14 @@ class TimelineEvent extends AbstractEntity {
 
     public function getFormat() {
         return $this->format;
+    }
+
+    public function setSide($side) {
+        $this->side = $side;
+    }
+
+    public function getSide() {
+        return $this->side;
     }
 
 }

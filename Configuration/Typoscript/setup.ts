@@ -36,6 +36,7 @@ page.footerData.10.value (
                     $('ul.timeline1 li.work div.content').css("background-color", $var);
                     $('ul.timeline1 li.work div.relative span.circle').css("background-color", $var);
                     $('ul.timeline2 li div.timeline-panel h4').css("color", $var);
+                    $('ul.timeline3').css("border-left", "4px solid " + $var);
                 }
             });
         });

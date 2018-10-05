@@ -83,9 +83,22 @@ return [
                 'default' => 'd.m.Y'
             ]
         ],
+        'side' => [
+            'label' => 'LLL:EXT:timeline/Resources/Private/Language/locallang_db.xlf:tx_timeline_domain_model_timelineevent.item_side',
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'items' => array(
+                    array('LLL:EXT:timeline/Resources/Private/Language/locallang_db.xlf:tx_timeline_domain_model_timelineevent.item_side.right', '0'),
+                    array('LLL:EXT:timeline/Resources/Private/Language/locallang_db.xlf:tx_timeline_domain_model_timelineevent.item_side.left', '1'),
+                ),
+                'size' => 1,
+                'maxitems' => 1,
+            ]
+        ],
     ],
     'types' => [
-        '0' => ['showitem' => 'title, event_link, description, start_date, end_date, format']
+        '0' => ['showitem' => 'title, event_link, description, start_date, end_date, format, side']
     ]
 ];
 
