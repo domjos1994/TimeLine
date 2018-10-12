@@ -8,7 +8,7 @@ class TimelineEventRepository extends Repository {
 
     public function getContentElementEntries($uid) {
         $query = $this->createQuery();
-        $query->statement("SELECT * FROM tx_timeline_domain_model_timelineevent WHERE timetable_id=$uid");
+        $query->statement("SELECT * FROM tx_timeline_domain_model_timelineevent WHERE timetable_id=$uid ORDER BY start_date");
         $result = $query->execute();
         return $result;
     }
