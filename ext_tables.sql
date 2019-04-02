@@ -33,6 +33,8 @@ CREATE TABLE tx_timeline_domain_model_timelineevent (
     sys_language_uid int(11) DEFAULT '0' NOT NULL,
     l10n_parent int(11) DEFAULT '0' NOT NULL,
     l10n_diffsource mediumblob,
+    sorting int(11) DEFAULT '0' NOT NULL,
+    t3_origuid int(11) DEFAULT '0' NOT NULL,
 
     PRIMARY KEY (uid),
     KEY parent (pid),

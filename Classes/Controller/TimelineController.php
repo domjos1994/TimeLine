@@ -11,7 +11,7 @@ class TimelineController extends ActionController {
     protected $configurationManager;
     private $layout;
     private $year;
-    private $color;
+    private $color, $foreColor;
 
     public function injectTimelineEventRepository(TimelineEventRepository $timelineEventRepository) {
         $this->timelineEventRepository = $timelineEventRepository;
@@ -36,16 +36,26 @@ class TimelineController extends ActionController {
             $this->year = $tmpYear;
         }
         
-        $tmpColor = $this->settings['color'];
+        $tmpColor = $this->settings['back_color'];
         if(empty($tmpColor)) {
-            $this->color = $tsSettings['color'];
+            $this->color = $tsSettings['back_color'];
         } else {
             $this->color = $tmpColor;
+        }
+
+        $tmpColor = $this->settings['fore_color'];
+        if(empty($tmpColor)) {
+            $this->foreColor = $tsSettings['fore_color'];
+        } else {
+            $this->foreColor = $tmpColor;
         }
     }
 
     public function listAction() {
-        $uid = $this->configurationManager->getContentObject()->data['uid'];
+        $uid = $this->configurationManager->getContentObject()->data['_LOCALIZED_UID'];
+        if($uid==null) {
+            $uid = $this->configurationManager->getContentObject()->data['uid'];
+        }
         $timelineEvents = $this->timelineEventRepository->findAll();
         
         if(!is_null($timelineEvents)) {
@@ -59,16 +69,15 @@ class TimelineController extends ActionController {
         }
 
         $uniqueIDs = null;
-        $i = 0;
-        foreach($timelineEvents as $var) {
+        for($i = 0;$i<=count($timelineEvents)-1; $i++) {
             $uniqueIDs[$i] = uniqid(rand(), true);
-            $i++;
         }
         $this->view->assign('events', $timelineEvents);
         $this->view->assign('uid', $uid);
         $this->view->assign("layout", $this->layout);
         $this->view->assign("onlyYear", $this->year);
         $this->view->assign("color", $this->color);
+        $this->view->assign("fore_color", $this->foreColor);
         return $this->view->render();
     }
 

@@ -12,7 +12,6 @@ class TimelineEventRepository extends Repository {
 	 * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface
 	 */
     public function getContentElementEntries($uid) {
-        /** @var \TYPO3\CMS\Extbase\Persistence\Generic\Query */
         $query = $this->createQuery();
 
         $query->getQuerySettings()->setRespectStoragePage(false);
@@ -24,9 +23,8 @@ class TimelineEventRepository extends Repository {
         	'start_date' => Query::ORDER_ASCENDING,
         ]);
 
-        /** @var \TYPO3\CMS\Extbase\Persistence\QueryResultInterface */
-        $result = $query->execute();
 
+        $result = $query->execute();
         return $result;
     }
 }

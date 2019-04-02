@@ -8,7 +8,9 @@ plugin.tx_timeline_pi1 {
         # cat=tx_timeline_pi1/style/b; type=boolean; label=Year: Show the year of the events only
         year = 0
         # cat=tx_timeline_pi1/color/a; type=color; label=Background-Color:The Background-Color of the Timeline
-        color = #000
+        back_color = #fff
+        # cat=tx_timeline_pi1/color/b; type=color; label=Background-Color:The Foreground-Color of the Timeline
+        fore_color = #000
         
 
         # cat=tx_timeline_pi1/file/a; type=string; label=Custom css: Include custom Stylesheet for Timeline

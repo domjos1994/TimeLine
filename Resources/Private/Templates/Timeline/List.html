@@ -1,5 +1,5 @@
 <div class="tx_timeline">
-    <ul class='timeline timeline{layout} col{color}'>
+    <ul class='timeline timeline{layout} col{color} foreCol{fore_color}'>
         <f:for each="{events}" as="event" iteration="objIterator">
             <f:switch expression="{layout}">
                 <f:case value="1">
@@ -41,7 +41,7 @@
                         </div>
                         <div class='content'>
                             <p>
-                                {event.description}
+                                <f:format.html>{event.description}</f:format.html>
                             <f:if condition="{event.eventLink}">
                                 <f:then>
                                     <br/>
@@ -69,7 +69,7 @@
                                 <h4>{event.title}</h4>
                             </div>
                             <div class="timeline-body">
-                                <p>{event.description}</p>
+                                <p><f:format.html>{event.description}</f:format.html></p>
                                 <f:if condition="{event.eventLink}">
                                     <f:then>
                                         <br/>
@@ -129,7 +129,7 @@
                     </f:if>
                         <h3>{event.title}</h3>
                         <p>
-                            {event.description}
+                            <f:format.html>{event.description}</f:format.html>
                             <f:if condition="{event.eventLink}">
                                 <f:then>
                                     <br/>

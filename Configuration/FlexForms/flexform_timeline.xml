@@ -44,7 +44,7 @@
                             </config>
                         </TCEforms>
                     </settings.year>
-                    <settings.color>
+                    <settings.back_color>
                         <TCEforms>
                             <label>LLL:EXT:timeline/Resources/Private/Language/locallang_db.xlf:tx_timeline_domain_model_timeline.item_color</label>
                             <config>							
@@ -67,7 +67,31 @@
                                 <eval>#555555</eval>
                             </config>
                         </TCEforms>
-                    </settings.color>
+                    </settings.back_color>
+                    <settings.fore_color>
+                        <TCEforms>
+                            <label>LLL:EXT:timeline/Resources/Private/Language/locallang_db.xlf:tx_timeline_domain_model_timeline.item_fore_color</label>
+                            <config>
+                                <type>input</type>
+                                <size>6</size>
+                                <wizards>
+                                    <color>
+                                        <type>colorbox</type>
+                                        <dim>212x18</dim>
+                                        <tableStyle>border:solid 1px black;</tableStyle>
+                                        <script>wizard_colorpicker.php</script>
+                                        <module type="array">
+                                            <name>wizard_colorpicker</name>
+                                            <urlParameters type="array"/>
+                                        </module>
+                                        <JSopenParams>height=340,width=360,status=0,menubar=0,scrollbars=1</JSopenParams>
+                                    </color>
+                                </wizards>
+                                <default></default>
+                                <eval>#555555</eval>
+                            </config>
+                        </TCEforms>
+                    </settings.fore_color>
                 </el>
             </ROOT>
         </sDEF>

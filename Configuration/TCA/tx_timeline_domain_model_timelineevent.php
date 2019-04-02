@@ -21,6 +21,52 @@ return [
         )
     ],
     'columns' => [
+        'sys_language_uid' => [
+            'exclude' => 1,
+            'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.language',
+            'config' => [
+                'type' => 'select',
+                'foreign_table' => 'sys_language',
+                'foreign_table_where' => 'ORDER BY sys_language.title',
+                'items' => [
+                    ['LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.allLanguages', -1],
+                    ['LLL:EXT:lang/Resources/Private/Language/locallang_general.php:LGL.default_value',0]
+                ],
+            ],
+        ],
+        'l10n_parent' => [
+            'displayCond' => 'FIELD:sys_language_uid:>:0',
+            'exclude' => 1,
+            'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
+            'config' => [
+                'type' => 'select',
+                'items' => [
+                    ['', 0],
+                ],
+                'foreign_table' => 'tx_timeline_domain_model_timelineevent',
+                'foreign_table_where' => 'AND tx_timeline_domain_model_timelineevent.uid=###REC_FIELD_l10n_parent### AND tx_timeline_domain_model_timelineevent.sys_language_uid IN (-1,0)',
+            ],
+        ],
+        'l10n_diffsource' => [
+            'config' => [
+                'type' =>'passthrough'
+            ],
+        ],
+        't3ver_label' => array(
+            'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.versionLabel',
+            'config' => array(
+                'type' => 'input',
+                'size' => 30,
+                'max' => 255
+            )
+        ),
+        'hidden' => array(
+            'exclude' => 1,
+            'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.hidden',
+            'config' => array(
+                'type' => 'check'
+            )
+        ),
         'title' => [
             'label' => 'LLL:EXT:timeline/Resources/Private/Language/locallang_db.xlf:tx_timeline_domain_model_timelineevent.item_title',
             'config' => [
@@ -55,8 +101,11 @@ return [
             'label' => 'LLL:EXT:timeline/Resources/Private/Language/locallang_db.xlf:tx_timeline_domain_model_timelineevent.item_description',
             'config' => [
                 'type' => 'text',
-                'eval' => 'trim'
-            ]
+                'eval' => 'trim',
+                'cols' => 40,
+                'rows' => 6
+            ],
+            'defaultExtras' => 'richtext[]'
         ],
         'start_date' => [
             'label' => 'LLL:EXT:timeline/Resources/Private/Language/locallang_db.xlf:tx_timeline_domain_model_timelineevent.item_start',
@@ -98,7 +147,7 @@ return [
         ],
     ],
     'types' => [
-        '0' => ['showitem' => 'title, event_link, description, start_date, end_date, format, side']
+        '0' => ['showitem' => 'sys_language_uid, l10n_parent, hidden, title, event_link, description, start_date, end_date, format, side']
     ]
 ];
 

@@ -30,10 +30,7 @@ ul.timeline1 li.work div.content {
 }
 
 ul.timeline1 li.work div.relative {
-    border-top-left-radius: 0.5em;
-    border-top-right-radius: 0.5em;
-    border-bottom-left-radius: 0.5em;
-    border-bottom-right-radius: 0.5em;
+    border-radius: 0.5em;
 }
 
 ul.timeline1 li.work input.radio {
@@ -52,13 +49,13 @@ ul.timeline1 li.work input.radio:checked ~ div.content {
 
 ul.timeline1 li.work input.radio:checked ~ div.relative {
     border-bottom: 0;
-    border-bottom-left-radius: 0em;
-    border-bottom-right-radius: 0em;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 ul.timeline1 span.circle {
     position: absolute;
-    left: 0.8em;
+    left: 1.8em;
     height: 1.4em;
     width: 1.4em;
     border-radius: 50%;
@@ -99,7 +96,7 @@ ul.timeline2 {
     position: absolute;
     content:" ";
     width: 2px;
-    background: #ffffff;
+    background: #708090;
     left: 50%;
     margin-left: -1.5px;
 }
@@ -157,7 +154,7 @@ ul.timeline2 {
     content:" ";
 }
 .timeline2 > li > .timeline-badge {
-    color: #ffffff;
+    color: #fff;
     width: 24px;
     height: 24px;
     line-height: 50px;
@@ -198,8 +195,7 @@ ul.timeline2 {
 }
 .timeline2 .timeline-body > p, 
 .timeline2 .timeline-body > ul {
-    margin: 0.5em;
-    margin-bottom: 0;
+    margin: 0.5em 0.5em 0;
 }
 .timeline2 .timeline-footer {
     padding: 5px 15px;
@@ -228,7 +224,7 @@ ul.timeline2 {
         left: 40px;
     }
     ul.timeline2 > li {
-        margin-bottom: 0px;
+        margin-bottom: 0;
         position: relative;
         width:100%;
         float: left;
@@ -280,8 +276,7 @@ ul.timeline2 {
     border-top-right-radius: 4px;
     background: rgba(255, 255, 255, 0.3);
     color: black;
-    margin: 50px auto;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
     position: relative;
     line-height: 1.4em;
     font-size: 1.03em;
@@ -289,11 +284,13 @@ ul.timeline2 {
     list-style: none;
     text-align: left;
     font-weight: 100;
+    margin: 50px auto 50px 8em!important;
 }
+
 .timeline3 h1,
 .timeline3 h2,
 .timeline3 h3 {
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
     font-weight: 100;
     font-size: 1.4em;
 }
@@ -318,10 +315,12 @@ ul.timeline2 {
     left: -217.5px;
     color: black;
     content: attr(data-date);
-    text-align: right;
+    text-align: left;
     font-weight: 100;
     font-size: 0.9em;
     min-width: 120px;
+    max-width: 7em;
+
 }
 .timeline3 .event:after {
     box-shadow: 0 0 0 4px gray;

@@ -9,7 +9,8 @@ plugin.tx_timeline_pi1 {
         jquery = {$plugin.tx_timeline_pi1.settings.jquery}
         layout = {$plugin.tx_timeline_pi1.settings.layout}
         year = {$plugin.tx_timeline_pi1.settings.year}
-        color = {$plugin.tx_timeline_pi1.settings.color}
+        back_color = {$plugin.tx_timeline_pi1.settings.back_color}
+        fore_color = {$plugin.tx_timeline_pi1.settings.fore_color}
         customCSS = {$plugin.tx_timeline_pi1.settings.customCSS}
     }
 }
@@ -37,6 +38,12 @@ page.footerData.10.value (
                     $('ul.timeline1 li.work div.relative span.circle').css("background-color", $var);
                     $('ul.timeline2 li div.timeline-panel h4').css("color", $var);
                     $('ul.timeline3').css("border-left", "4px solid " + $var);
+                }
+                if($var.startsWith("foreCol")) {
+                    $var = $var.replace("foreCol", "");
+                    $('ul.timeline1 li.work div.content').css("color", $var);
+                    $('ul.timeline1 li.work div.relative').css("color", $var);
+                    $('ul.timeline2 li div.timeline-panel h4').css("background-color", $var);
                 }
             });
         });

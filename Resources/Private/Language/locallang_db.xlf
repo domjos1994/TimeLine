@@ -51,8 +51,11 @@
              <source>Show the year only</source>
          </trans-unit>
          <trans-unit id="tx_timeline_domain_model_timeline.item_color">
-             <source>Color</source>
+             <source>Back-Color</source>
          </trans-unit>
+         <trans-unit id="tx_timeline_domain_model_timeline.item_fore_color">
+            <source>Font-Color</source>
+        </trans-unit>
          <trans-unit id="tx_timeline_domain_model_timeline.ts">
              <source>From Typoscript</source>
          </trans-unit>

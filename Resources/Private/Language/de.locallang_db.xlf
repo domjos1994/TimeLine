@@ -69,6 +69,10 @@
              <source>Color</source>
              <target>Farbe</target>
          </trans-unit>
+         <trans-unit id="tx_timeline_domain_model_timeline.item_fore_color">
+             <source>Font-Color</source>
+             <target>Schrift-Farbe</target>
+         </trans-unit>
          <trans-unit id="tx_timeline_domain_model_timeline.ts">
              <source>From Typoscript</source>
              <target>Von Typoscript</target>
