@@ -16,10 +16,10 @@ $EM_CONF[$_EXTKEY] = array (
   'category' => 'plugin',
   'author' => 'Dominic Joas',
   'author_company' => '',
-  'author_email' => 'entwicklung@domjos.de',
+  'author_email' => 'developing@domjos.de',
   'state' => 'beta',
   'clearCacheOnLoad' => true,
-  'version' => '0.0.3',
+  'version' => '0.0.4',
   'constraints' => 
   array (
     'depends' => 
