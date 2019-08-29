@@ -7,23 +7,24 @@ use TYPO3\CMS\Extbase\Persistence\Repository;
 
 class TimelineEventRepository extends Repository {
 
-	/**
-	 * @param int $uid
-	 * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface
-	 */
+    /**
+     * @param int $uid
+     * @param $order
+     * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface
+     */
     public function getContentElementEntries($uid, $order) {
         $query = $this->createQuery();
         $ordering = null;
 
         switch ($order) {
-            case "none":
-                $ordering = [];
-                break;
             case "asc":
                 $ordering = ['start_date' => Query::ORDER_ASCENDING];
                 break;
             case "desc":
                 $ordering = ['start_date' => Query::ORDER_DESCENDING];
+                break;
+            default:
+                $ordering = ['sorting' => Query::ORDER_ASCENDING];
                 break;
         }
 
