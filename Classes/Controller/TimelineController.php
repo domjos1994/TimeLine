@@ -12,6 +12,7 @@ class TimelineController extends ActionController {
     private $layout;
     private $year;
     private $color, $foreColor;
+    private $order;
 
     public function injectTimelineEventRepository(TimelineEventRepository $timelineEventRepository) {
         $this->timelineEventRepository = $timelineEventRepository;
@@ -49,6 +50,13 @@ class TimelineController extends ActionController {
         } else {
             $this->foreColor = $tmpColor;
         }
+
+        $tmpOrder = $this->settings['order'];
+        if($tmpOrder == "fromTS") {
+            $this->order = $tsSettings['order'];
+        } else {
+            $this->order = $tmpOrder;
+        }
     }
 
     public function listAction() {
@@ -60,11 +68,11 @@ class TimelineController extends ActionController {
         
         if(!is_null($timelineEvents)) {
             if(empty($timelineEvents->toArray())) {
-                $query = $this->timelineEventRepository->getContentElementEntries($uid);
+                $query = $this->timelineEventRepository->getContentElementEntries($uid, $this->order);
                 $timelineEvents = $query->toArray();
             }
         } else {
-            $query = $this->timelineEventRepository->getContentElementEntries($uid);
+            $query = $this->timelineEventRepository->getContentElementEntries($uid, $this->order);
             $timelineEvents = $query->toArray();
         }
 

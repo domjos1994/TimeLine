@@ -59,6 +59,18 @@
          <trans-unit id="tx_timeline_domain_model_timeline.ts">
              <source>From Typoscript</source>
          </trans-unit>
+          <trans-unit id="tx_timeline_domain_model_timeline.order">
+              <source>Order</source>
+          </trans-unit>
+          <trans-unit id="tx_timeline_domain_model_timeline.order.asc">
+              <source>Ascending</source>
+          </trans-unit>
+          <trans-unit id="tx_timeline_domain_model_timeline.order.desc">
+              <source>Descending</source>
+          </trans-unit>
+          <trans-unit id="tx_timeline_domain_model_timeline.order.none">
+              <source>None</source>
+          </trans-unit>
          <trans-unit id="tx_timeline_domain_model_timeline.custom">
              <source>Custom CSS-File</source>
          </trans-unit>

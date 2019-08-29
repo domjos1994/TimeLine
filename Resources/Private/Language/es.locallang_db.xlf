@@ -77,6 +77,22 @@
              <source>From Typoscript</source>
              <target>De Typoscript</target>
          </trans-unit>
+          <trans-unit id="tx_timeline_domain_model_timeline.order">
+              <source>Order</source>
+              <source>Clasificación</source>
+          </trans-unit>
+          <trans-unit id="tx_timeline_domain_model_timeline.order.asc">
+              <source>Ascending</source>
+              <source>Ascendente</source>
+          </trans-unit>
+          <trans-unit id="tx_timeline_domain_model_timeline.order.desc">
+              <source>Descending</source>
+              <source>Descendente</source>
+          </trans-unit>
+          <trans-unit id="tx_timeline_domain_model_timeline.order.none">
+              <source>None</source>
+              <source>No</source>
+          </trans-unit>
          <trans-unit id="tx_timeline_domain_model_timeline.custom">
              <source>Custom CSS-File</source>
              <source>Propio CSS-Expediente</source>
