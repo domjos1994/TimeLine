@@ -2,9 +2,16 @@
 
 namespace DominicJoas\Timeline\Controller;
 
+use DominicJoas\Timeline\Domain\Model\TimelineEvent;
 use DominicJoas\Timeline\Domain\Repository\TimelineEventRepository;
+
+use Exception;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
+
+use GeorgRinger\News\Domain\Model\Dto\NewsDemand;
+use GeorgRinger\News\Domain\Repository\NewsRepository;
 
 class TimelineController extends ActionController {
     private $timelineEventRepository;
@@ -59,6 +66,38 @@ class TimelineController extends ActionController {
         }
     }
 
+    public function createTimeLineEventsFromNews() {
+        $events = [];
+        try {
+            $pages = $this->configurationManager->getContentObject()->data['pages'];
+            $objManager = GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\Object\\ObjectManager');
+            $newsRepository = $objManager->get(NewsRepository::class);
+            $demand = $objManager->get(NewsDemand::class);
+            $demand->setStoragePage($pages);
+            $demand->setPid($pages);
+            $entries = $newsRepository->findDemanded($demand);
+
+            $counter = 0;
+            foreach ($entries as $entry) {
+                if($entry->getPid()==$pages) {
+                    $event = new TimelineEvent();
+                    $event->setTitle($entry->getTitle());
+                    $event->setDescription($entry->getDescription());
+                    $event->setStartDate($entry->getStarttime());
+                    $event->setEndDate($entry->getEndtime());
+                    if($entry->getRelatedLinks()!=null) {
+                        if($entry->getRelatedLinks()->count()!=0) {
+                            $event->setEventLink($entry->getRelatedLinks()[0]->getUri());
+                        }
+                    }
+                    $events[$counter] = $event;
+                    $counter++;
+                }
+            }
+        } catch (Exception $ex) {}
+        return $events;
+    }
+
     public function listAction() {
         $uid = $this->configurationManager->getContentObject()->data['_LOCALIZED_UID'];
         if($uid==null) {
@@ -74,6 +113,11 @@ class TimelineController extends ActionController {
         } else {
             $query = $this->timelineEventRepository->getContentElementEntries($uid, $this->order);
             $timelineEvents = $query->toArray();
+        }
+
+        $newsEvents = $this->createTimeLineEventsFromNews();
+        if(count($newsEvents)!=0) {
+            $timelineEvents = $newsEvents;
         }
 
         $uniqueIDs = null;
