@@ -15,6 +15,7 @@
                             <label>LLL:EXT:timeline/Resources/Private/Language/locallang_db.xlf:tx_timeline_domain_model_timeline.item_layout</label>
                             <config>
                                 <type>select</type>
+                                <renderType>selectSingle</renderType>
                                 <items type="array">
                                     <numIndex index="0" type="array">
                                         <numIndex index="0">LLL:EXT:timeline/Resources/Private/Language/locallang_db.xlf:tx_timeline_domain_model_timeline.ts</numIndex>
@@ -97,6 +98,7 @@
                             <label>LLL:EXT:timeline/Resources/Private/Language/locallang_db.xlf:tx_timeline_domain_model_timeline.order</label>
                             <config>
                                 <type>select</type>
+                                <renderType>selectSingle</renderType>
                                 <items type="array">
                                     <numIndex index="0" type="array">
                                         <numIndex index="0">LLL:EXT:timeline/Resources/Private/Language/locallang_db.xlf:tx_timeline_domain_model_timeline.ts</numIndex>

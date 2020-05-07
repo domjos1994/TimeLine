@@ -1,16 +1,19 @@
 <?php
 
 use GeorgRinger\News\Domain\Repository\NewsRepository;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 
 defined('TYPO3_MODE') || die('Access denied.');
 
-call_user_func(function($extKey) {
-    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+call_user_func(function() {
+    ExtensionUtility::configurePlugin(
         'DominicJoas.Timeline', 'Pi1', ['Timeline' => 'list',], ['Timeline' => '',]
     );
 
     // wizards
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
+    ExtensionManagementUtility::addPageTSConfig(
         'mod {
             wizards.newContentElement.wizardItems.plugins {
 		    elements {
@@ -28,6 +31,6 @@ call_user_func(function($extKey) {
             }
         }'
     );
-}, $_EXTKEY);
+}, "timeline");
 
-\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\Object\Container\Container::class)->registerImplementation(NewsRepository::class, NewsRepository::class);
+GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\Object\Container\Container::class)->registerImplementation(NewsRepository::class, NewsRepository::class);

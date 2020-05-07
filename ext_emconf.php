@@ -10,7 +10,7 @@
  * writing. "version" and "dependencies" must not be touched!
  ***************************************************************/
 
-$EM_CONF[$_EXTKEY] = array (
+$EM_CONF["timeline"] = array (
   'title' => 'TimeLine',
   'description' => 'An extension to create TimeLines in the FE!',
   'category' => 'plugin',
@@ -19,12 +19,12 @@ $EM_CONF[$_EXTKEY] = array (
   'author_email' => 'developing@domjos.de',
   'state' => 'beta',
   'clearCacheOnLoad' => true,
-  'version' => '0.0.5',
+  'version' => '0.0.6',
   'constraints' => 
   array (
     'depends' => 
     array (
-      'typo3' => '8.7.0-9.5.99',
+      'typo3' => '8.7.0-10.4.99',
     ),
     'conflicts' => 
     array (
