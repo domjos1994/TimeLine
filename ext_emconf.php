@@ -19,7 +19,7 @@ $EM_CONF["timeline"] = array (
   'author_email' => 'developing@domjos.de',
   'state' => 'beta',
   'clearCacheOnLoad' => true,
-  'version' => '0.0.6',
+  'version' => '10.4.0',
   'constraints' => 
   array (
     'depends' => 
