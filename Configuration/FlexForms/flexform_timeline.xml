@@ -50,6 +50,7 @@
                             <label>LLL:EXT:timeline/Resources/Private/Language/locallang_db.xlf:tx_timeline_domain_model_timeline.item_color</label>
                             <config>							
                                 <type>input</type>
+                                <renderType>colorpicker</renderType>
                                 <size>6</size>
                                 <wizards>
                                     <color>
@@ -57,15 +58,15 @@
                                         <dim>212x18</dim>
                                         <tableStyle>border:solid 1px black;</tableStyle>
                                         <script>wizard_colorpicker.php</script>
+                                        <JSopenParams>height=340,width=360,status=0,menubar=0,scrollbars=1</JSopenParams>
                                         <module type="array">
                                             <name>wizard_colorpicker</name>
                                             <urlParameters type="array"/>
-                                        </module> 
-                                        <JSopenParams>height=340,width=360,status=0,menubar=0,scrollbars=1</JSopenParams>
+                                        </module>
                                     </color>
                                 </wizards>
-                                <default></default>
                                 <eval>#555555</eval>
+                                <default></default>
                             </config>
                         </TCEforms>
                     </settings.back_color>
@@ -74,6 +75,7 @@
                             <label>LLL:EXT:timeline/Resources/Private/Language/locallang_db.xlf:tx_timeline_domain_model_timeline.item_fore_color</label>
                             <config>
                                 <type>input</type>
+                                <renderType>colorpicker</renderType>
                                 <size>6</size>
                                 <wizards>
                                     <color>
@@ -81,15 +83,15 @@
                                         <dim>212x18</dim>
                                         <tableStyle>border:solid 1px black;</tableStyle>
                                         <script>wizard_colorpicker.php</script>
+                                        <JSopenParams>height=340,width=360,status=0,menubar=0,scrollbars=1</JSopenParams>
                                         <module type="array">
                                             <name>wizard_colorpicker</name>
                                             <urlParameters type="array"/>
                                         </module>
-                                        <JSopenParams>height=340,width=360,status=0,menubar=0,scrollbars=1</JSopenParams>
                                     </color>
                                 </wizards>
-                                <default></default>
                                 <eval>#555555</eval>
+                                <default></default>
                             </config>
                         </TCEforms>
                     </settings.fore_color>
