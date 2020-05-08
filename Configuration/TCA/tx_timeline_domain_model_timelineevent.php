@@ -110,7 +110,9 @@ return [
                 'type' => 'text',
                 'eval' => 'trim',
                 'cols' => 40,
-                'rows' => 6
+                'rows' => 6,
+                'enableRichtext' => true,
+                'richtextConfiguration' => 'default',
             ],
             'defaultExtras' => 'richtext[]'
         ],
