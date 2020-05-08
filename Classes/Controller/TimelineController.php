@@ -70,6 +70,11 @@ class TimelineController extends ActionController {
         $events = [];
         try {
             $pages = $this->configurationManager->getContentObject()->data['pages'];
+            if(is_null($pages)) {
+                $pages = $this->configurationManager->getContentObject()->data['pid'];
+            } else if($pages === '') {
+                $pages = $this->configurationManager->getContentObject()->data['pid'];
+            }
             $objManager = GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\Object\\ObjectManager');
             $newsRepository = $objManager->get(NewsRepository::class);
             $demand = $objManager->get(NewsDemand::class);
