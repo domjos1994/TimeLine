@@ -156,7 +156,23 @@ return [
         ],
     ],
     'types' => [
-        '0' => ['showitem' => 'sys_language_uid, l10n_parent, hidden, title, event_link, description, start_date, end_date, format, side']
+        '0' => [
+            'showitem' =>
+                '--palette--;;general, --palette--;;title, description, --palette--;;dates, side'
+        ]
+    ],
+    'palettes' => [
+        'general' => [
+            'showitem' => 'sys_language_uid, l10n_parent, hidden'
+        ],
+        'title' => [
+            'label' => 'LLL:EXT:timeline/Resources/Private/Language/locallang_db.xlf:tx_timeline_domain_model_timelineevent.item_title',
+            'showitem' => 'title, event_link'
+        ],
+        'dates' => [
+            'label' => 'LLL:EXT:timeline/Resources/Private/Language/locallang_db.xlf:tx_timeline_domain_model_timelineevent.item_dates',
+            'showitem' => 'start_date, end_date, format'
+        ]
     ]
 ];
 

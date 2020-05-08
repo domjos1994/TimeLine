@@ -28,6 +28,10 @@
             <source>Description</source>
             <target>Beschreibung</target>
          </trans-unit>
+          <trans-unit id="tx_timeline_domain_model_timelineevent.item_dates">
+              <source>Period of time</source>
+              <target>Zeitspanne</target>
+          </trans-unit>
          <trans-unit id="tx_timeline_domain_model_timelineevent.item_start">
             <source>Start-Date</source>
             <target>Start-Datum</target>
@@ -65,6 +69,10 @@
              <source>Show the year only</source>
              <target>Nur das Jahr zeigen</target>
          </trans-unit>
+          <trans-unit id="tx_timeline_domain_model_timeline.item_colors">
+              <source>Colors</source>
+              <target>Farben</target>
+          </trans-unit>
          <trans-unit id="tx_timeline_domain_model_timeline.item_color">
              <source>Color</source>
              <target>Farbe</target>
