@@ -66,7 +66,7 @@
                                     </color>
                                 </wizards>
                                 <eval>#555555</eval>
-                                <default></default>
+                                <default/>
                             </config>
                         </TCEforms>
                     </settings.back_color>
@@ -91,7 +91,7 @@
                                     </color>
                                 </wizards>
                                 <eval>#555555</eval>
-                                <default></default>
+                                <default/>
                             </config>
                         </TCEforms>
                     </settings.fore_color>

@@ -85,6 +85,7 @@ return [
             'label' => 'LLL:EXT:timeline/Resources/Private/Language/locallang_db.xlf:tx_timeline_domain_model_timelineevent.item_event_title',
             'config' => array(
                 'type' => 'input',
+                'renderType' => 'inputLink',
                 'wizards' => array(
                     'link' => array(
                         'type' => 'popup',
