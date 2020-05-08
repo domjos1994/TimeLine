@@ -23,7 +23,7 @@ return [
     'columns' => [
         'sys_language_uid' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
+            'label' => 'LLL:EXT:timeline/Resources/Private/Language/locallang_db.xlf:tx_timeline_domain_model_timelineevent.item_lang',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -67,7 +67,7 @@ return [
         ),
         'hidden' => array(
             'exclude' => 1,
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hidden',
+            'label' => 'LLL:EXT:timeline/Resources/Private/Language/locallang_db.xlf:tx_timeline_domain_model_timelineevent.item_hide',
             'config' => array(
                 'type' => 'check',
                 'default' => 0

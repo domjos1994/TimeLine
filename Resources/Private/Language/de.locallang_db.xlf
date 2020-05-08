@@ -16,6 +16,14 @@
              <source>Create a TimeLine on your website</source>
              <target>Einen Zeitstrahl auf der Website erstellen</target>
          </trans-unit>
+          <trans-unit id="tx_timeline_domain_model_timelineevent.item_lang">
+              <source>Language</source>
+              <target>Sprache</target>
+          </trans-unit>
+          <trans-unit id="tx_timeline_domain_model_timelineevent.item_hide">
+              <source>Hide</source>
+              <target>Ausblenden</target>
+          </trans-unit>
          <trans-unit id="tx_timeline_domain_model_timelineevent.item_title">
             <source>Title</source>
             <target>Titel</target>

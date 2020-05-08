@@ -16,6 +16,14 @@
              <source>Create a TimeLine on your website</source>
              <target>Crear una línea de tiempo en el sitio web</target>
          </trans-unit>
+          <trans-unit id="tx_timeline_domain_model_timelineevent.item_lang">
+              <source>Language</source>
+              <target>Idioma</target>
+          </trans-unit>
+          <trans-unit id="tx_timeline_domain_model_timelineevent.item_hide">
+              <source>Hide</source>
+              <target>Esconder</target>
+          </trans-unit>
          <trans-unit id="tx_timeline_domain_model_timelineevent.item_title">
             <source>Title</source>
             <target>Título</target>
