@@ -20,6 +20,8 @@ class TimelineController extends ActionController {
     private $year;
     private $color, $foreColor;
     private $order;
+    private $customCSS;
+    private $jquery;
 
     public function injectTimelineEventRepository(TimelineEventRepository $timelineEventRepository) {
         $this->timelineEventRepository = $timelineEventRepository;
@@ -64,6 +66,9 @@ class TimelineController extends ActionController {
         } else {
             $this->order = $tmpOrder;
         }
+
+        $this->customCSS = $tsSettings['customCSS'];
+        $this->jquery = $tsSettings['jquery'];
     }
 
     public function createTimeLineEventsFromNews() {
@@ -129,6 +134,8 @@ class TimelineController extends ActionController {
         for($i = 0;$i<=count($timelineEvents)-1; $i++) {
             $uniqueIDs[$i] = uniqid(rand(), true);
         }
+        $this->view->assign('jquery', $this->jquery);
+        $this->view->assign('customCSS', $this->customCSS);
         $this->view->assign('events', $timelineEvents);
         $this->view->assign('uid', $uid);
         $this->view->assign("layout", $this->layout);
