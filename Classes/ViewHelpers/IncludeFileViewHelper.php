@@ -6,7 +6,6 @@ use Closure;
 use Exception;
 use TYPO3\CMS\Core\Page\PageRenderer;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Frontend\Resource\FilePathSanitizer;
 use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
@@ -32,9 +31,15 @@ class IncludeFileViewHelper extends  AbstractViewHelper {
 
         $pageRenderer = GeneralUtility::makeInstance(PageRenderer::class);
         if (TYPO3_MODE === 'FE') {
-            $sanitizer = GeneralUtility::makeInstance(FilePathSanitizer::class);
+
             try {
-                $path = $sanitizer->sanitize($file);
+                $path = '';
+                if(class_exists('FilePathSanitizer')) {
+                    $sanitizer = GeneralUtility::makeInstance(\TYPO3\CMS\Frontend\Resource\FilePathSanitizer::class);
+                    $path = $sanitizer->sanitize($file);
+                } else {
+                    $path = $file;
+                }
                 // JS
                 if (strtolower(substr($path, -3)) === '.js') {
                     if ($footer) {
