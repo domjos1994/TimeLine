@@ -1,5 +1,6 @@
 <?php
 
+use DominicJoas\Timeline\Controller\TimelineController;
 use GeorgRinger\News\Domain\Repository\NewsRepository;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -9,7 +10,7 @@ defined('TYPO3_MODE') || die('Access denied.');
 
 call_user_func(function() {
     ExtensionUtility::configurePlugin(
-        'DominicJoas.Timeline', 'Pi1', ['Timeline' => 'list',], ['Timeline' => '',]
+        'DominicJoas.Timeline', 'Pi1', [TimelineController::class => 'list',], ['Timeline' => '',]
     );
 
     // wizards
